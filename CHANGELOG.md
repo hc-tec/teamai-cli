@@ -2,21 +2,88 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [Unreleased]
+### [0.22.1](https://github.com/Tencent/teamai-cli/compare/v0.22.0...v0.22.1) (2026-09-15)
 
-### ✨ Features
 
-- Multi-project management: `role` and `project` together resolve resource namespaces, and project-private learnings are isolated ([#426](https://github.com/Tencent/teamai-cli/pull/426), for [#375](https://github.com/Tencent/teamai-cli/issues/375)).
-- Data partitions auto-migrate a legacy `.teamai`, resume interrupted migrations, smoke-check the clone, and keep a git-ignored backup ([#439](https://github.com/Tencent/teamai-cli/pull/439), for [#374](https://github.com/Tencent/teamai-cli/issues/374)).
+### Features
 
-### 🐛 Bug Fixes
+* **#375:** multi-project P1+P2 — project dimension, learnings isolation ([91df7f0](https://github.com/Tencent/teamai-cli/commit/91df7f0727d6c487fcd6340265a52f13baabf7e9)), closes [#375](https://github.com/Tencent/teamai-cli/issues/375)
+* **#375:** multi-project P3 — member roster + projects commands + push --project ([f11e2d1](https://github.com/Tencent/teamai-cli/commit/f11e2d17a3f5eefbc70ad60ce1c107d07d34cdf8)), closes [#375](https://github.com/Tencent/teamai-cli/issues/375)
+* add first-class Qoder support ([a8db627](https://github.com/Tencent/teamai-cli/commit/a8db627cf6e4e9825bc071876de191a6922d66e2))
+* add first-class ZCode support ([8b6c870](https://github.com/Tencent/teamai-cli/commit/8b6c8709293fed5f3329961c894c4c8144976649))
+* add JoyCode agent support ([f2941ab](https://github.com/Tencent/teamai-cli/commit/f2941ab676caec901e22a512c39e011497b47885))
+* **contribute:** add sharing.contributeHint.enabled to opt out of the share-learnings nudge ([5ff09d6](https://github.com/Tencent/teamai-cli/commit/5ff09d6ad55651c5048c382f15711549f0e28434))
+* **contribute:** recognize Japanese course-correction prompts ([4670f1c](https://github.com/Tencent/teamai-cli/commit/4670f1ce3d2ea92b79824f3e8ef7fef9e71f58d2))
+* **data-layout:** auto-migrate a legacy .teamai into the partition ([#374](https://github.com/Tencent/teamai-cli/issues/374) P1-3) ([c04a320](https://github.com/Tencent/teamai-cli/commit/c04a32049084370df81965b083b73a43a543d938))
+* **data-layout:** route managed-mcp.json + project resource cache to the partition ([#374](https://github.com/Tencent/teamai-cli/issues/374) P1-2C) ([cb4b4d0](https://github.com/Tencent/teamai-cli/commit/cb4b4d0d6d2531755e0b542844aaf6e772ba5e69)), closes [#406](https://github.com/Tencent/teamai-cli/issues/406)
+* **data-layout:** route new project installs to ~/.teamai/projects/<slug>/ + .sync-lock + status ([#374](https://github.com/Tencent/teamai-cli/issues/374) P1-2B) ([66e6030](https://github.com/Tencent/teamai-cli/commit/66e60307a48f11c05ab0aa323d2d588f10a4d2d5))
+* **gitlab:** support custom API prefix for gateway-proxied instances ([290e904](https://github.com/Tencent/teamai-cli/commit/290e90406faed95639bc2a0ea6861d81e313e0fc))
+* **local-agent:** apply WorkBuddy model configs from ClawPro ([470d7c4](https://github.com/Tencent/teamai-cli/commit/470d7c46bd4182a8c166a4d7d8c3003304350704))
+* **local-agent:** sync and report ClawPro model configs ([c173339](https://github.com/Tencent/teamai-cli/commit/c173339e652b3200d81c60969093bc613a65fe0e)), closes [#294](https://github.com/Tencent/teamai-cli/issues/294)
+* **packages:** add declarative team environment install ([218d13c](https://github.com/Tencent/teamai-cli/commit/218d13c6afe7210ed8b405e0a633713469da4d6c))
+* **source:** warn that a source with no publicSkills will sync 0 skills ([213b3c6](https://github.com/Tencent/teamai-cli/commit/213b3c6ec2f7d4ba589a193b83f839ad787fd1ec)), closes [#416](https://github.com/Tencent/teamai-cli/issues/416) [#416](https://github.com/Tencent/teamai-cli/issues/416)
+* substitute any scalar plugin field into install commands ([352e69d](https://github.com/Tencent/teamai-cli/commit/352e69d2cdeffe68a7011dafd0d66ccb8a8f6153))
 
-- `teamai status` counts rule files in subdirectories recursively ([#437](https://github.com/Tencent/teamai-cli/pull/437)).
-- Codex Stop-phase contribution hints are deferred to the next prompt, so the host no longer rejects `additionalContext` ([#441](https://github.com/Tencent/teamai-cli/pull/441)).
 
-### 📝 Documentation
+### Bug Fixes
 
-- Align the public usage guides, drop internal-only details, and cover the missing commands and configuration ([#442](https://github.com/Tencent/teamai-cli/pull/442)).
+* **agents:** compare rendered native agent content ([ea0b387](https://github.com/Tencent/teamai-cli/commit/ea0b3875e35f533c18bc38820ce61195161330fe))
+* **codebase:** point builtin wiki skill at teamai extract ([e151d43](https://github.com/Tencent/teamai-cli/commit/e151d434c4048900c98c0e79066dde403624df7d)), closes [#360](https://github.com/Tencent/teamai-cli/issues/360)
+* **codebase:** preserve local wiki refresh and lint targets ([1ca43ac](https://github.com/Tencent/teamai-cli/commit/1ca43acc1fa7c322cd490db9e3a9da6b0da98bc2))
+* **codex:** defer Stop hints to the next prompt ([#440](https://github.com/Tencent/teamai-cli/issues/440)) ([09a2efd](https://github.com/Tencent/teamai-cli/commit/09a2efd542d709a15893458026c9eb553fa33afb))
+* **codex:** reuse existing shared skills ([fb692a2](https://github.com/Tencent/teamai-cli/commit/fb692a23eb9d1f36be1f37c1082b24fddb3b996e))
+* collect Codex token usage ([ba26b03](https://github.com/Tencent/teamai-cli/commit/ba26b03e2f1c75cb3dedf3e32456f89275c48339))
+* **dashboard:** scope Codex token snapshots per rollout ([8c3a0d1](https://github.com/Tencent/teamai-cli/commit/8c3a0d1d068471ed851058fa2466e20fcb4156a5))
+* **data-layout:** address PR [#397](https://github.com/Tencent/teamai-cli/issues/397) review — env backup convergence + preserve historical projectRoot fallback ([8fec475](https://github.com/Tencent/teamai-cli/commit/8fec475b68a2173c15c1f1764d5f365123e0ef12)), closes [#374](https://github.com/Tencent/teamai-cli/issues/374)
+* **data-layout:** address PR [#402](https://github.com/Tencent/teamai-cli/issues/402) review — dataHome injection, slug collisions, case-probe volume ([8614f76](https://github.com/Tencent/teamai-cli/commit/8614f7634e7433bb865e39f19fbf67c99e950171)), closes [#374](https://github.com/Tencent/teamai-cli/issues/374)
+* **data-layout:** address PR [#406](https://github.com/Tencent/teamai-cli/issues/406) review — cwd-independent detection + full-section sync lock ([e55a58f](https://github.com/Tencent/teamai-cli/commit/e55a58fe732070b0151ea18a220cff2d1781ab36)), closes [#1](https://github.com/Tencent/teamai-cli/issues/1) [#2](https://github.com/Tencent/teamai-cli/issues/2) [#374](https://github.com/Tencent/teamai-cli/issues/374)
+* **data-layout:** address PR [#406](https://github.com/Tencent/teamai-cli/issues/406) round-2 review — self-mode precedence + skip deploy on lock contention ([e80ea7e](https://github.com/Tencent/teamai-cli/commit/e80ea7e97dfa042915689de07f6f55ae56e6b2c9)), closes [#1](https://github.com/Tencent/teamai-cli/issues/1) [#2](https://github.com/Tencent/teamai-cli/issues/2) [#374](https://github.com/Tencent/teamai-cli/issues/374)
+* **data-layout:** address PR [#406](https://github.com/Tencent/teamai-cli/issues/406) round-3 review — partition authoritative, lock the auto-report clone writes ([9883cdc](https://github.com/Tencent/teamai-cli/commit/9883cdc593d71667cf4e7c4e356472907aac6f27)), closes [#1](https://github.com/Tencent/teamai-cli/issues/1) [#2](https://github.com/Tencent/teamai-cli/issues/2) [#374](https://github.com/Tencent/teamai-cli/issues/374)
+* **data-layout:** exclude a contended scope from reconcile/report, not just the fetch ([#374](https://github.com/Tencent/teamai-cli/issues/374)) ([cebc841](https://github.com/Tencent/teamai-cli/commit/cebc8415e79add6ee2fbad8b53f4ca09de0d39e0)), closes [#406](https://github.com/Tencent/teamai-cli/issues/406) [#406](https://github.com/Tencent/teamai-cli/issues/406) [#406](https://github.com/Tencent/teamai-cli/issues/406)
+* **data-layout:** exclude a contended scope from the cross-team source stage too ([ae8bed7](https://github.com/Tencent/teamai-cli/commit/ae8bed74b129a9fbcaac8293387a115ab9be5261)), closes [#414](https://github.com/Tencent/teamai-cli/issues/414) [#374](https://github.com/Tencent/teamai-cli/issues/374)
+* **data-layout:** finish interrupted migrations + smoke-check the clone + clean failure ([#374](https://github.com/Tencent/teamai-cli/issues/374) P1-3 review) ([8da4c4f](https://github.com/Tencent/teamai-cli/commit/8da4c4f2d1b74edbafbf116d528794e540677e89))
+* **data-layout:** give each worktree its own managed-mcp file, killing shared-manifest lost updates ([#374](https://github.com/Tencent/teamai-cli/issues/374) P1-2C review) ([1fad7a9](https://github.com/Tencent/teamai-cli/commit/1fad7a935972e19babf8747d4e0b453291843d33))
+* **data-layout:** hold the sync lock across the whole clone-consuming pull, closing the TOCTOU window ([93736ee](https://github.com/Tencent/teamai-cli/commit/93736ee8df4becaec6242aa77a839bcf7430609e)), closes [#374](https://github.com/Tencent/teamai-cli/issues/374)
+* **data-layout:** isolate managed-mcp ownership per worktree ([#374](https://github.com/Tencent/teamai-cli/issues/374) P1-2C review) ([e2d5c74](https://github.com/Tencent/teamai-cli/commit/e2d5c74b9afb4be514cf05257ce5408f33bad6f0))
+* **data-layout:** make migration backup non-destructive and git-ignored ([#374](https://github.com/Tencent/teamai-cli/issues/374) P1-3 review) ([0fa78fa](https://github.com/Tencent/teamai-cli/commit/0fa78faf9c40a105bc057b8c1a0d46f868a04f32))
+* **data-layout:** migrate legacy bare managed-mcp keys + fix mcp list reader ([#374](https://github.com/Tencent/teamai-cli/issues/374) P1-2C review) ([170c3ff](https://github.com/Tencent/teamai-cli/commit/170c3ff50620ec23d3495018fbf718dac6d08417)), closes [#417](https://github.com/Tencent/teamai-cli/issues/417)
+* **data-layout:** migrate MCP ownership from the true old workspace path + isolate the resource cache per worktree ([#374](https://github.com/Tencent/teamai-cli/issues/374) P1-2C review) ([44599dc](https://github.com/Tencent/teamai-cli/commit/44599dca5db9e2e1bce93490e4c21340788fcdbf))
+* **data-layout:** persist the per-worktree manifest before deleting migrated records ([#374](https://github.com/Tencent/teamai-cli/issues/374) P1-2C review) ([d945dcb](https://github.com/Tencent/teamai-cli/commit/d945dcb46f0e719a3111240a7e417fd0bc3bde2e))
+* **data-layout:** project uninstall cleans every worktree before deleting the shared partition ([#374](https://github.com/Tencent/teamai-cli/issues/374) P1-2C review) ([87f0be8](https://github.com/Tencent/teamai-cli/commit/87f0be80edc4a0379f974f341c7049bcdb9ff972))
+* **data-layout:** route local-agent MCP install/uninstall/report through workspace-scoped ownership ([#374](https://github.com/Tencent/teamai-cli/issues/374) P1-2C review) ([5e97ec0](https://github.com/Tencent/teamai-cli/commit/5e97ec0db09a919a01fb230ea5d3662cfdf3e96a))
+* **data-layout:** run the pre-dispatch hook migration under the scope lock, not before it ([5b4690d](https://github.com/Tencent/teamai-cli/commit/5b4690d2a6cb138d9fa1e0bdd7baab19d2280b41)), closes [#374](https://github.com/Tencent/teamai-cli/issues/374)
+* **frontmatter:** warn when YAML frontmatter has opening --- but no closing delimiter ([0811bfe](https://github.com/Tencent/teamai-cli/commit/0811bfe0174c8f54d003a59bd7bec43757ce9ffc))
+* **gitlab:** diagnose unconfigured self-hosted instances ([49efc97](https://github.com/Tencent/teamai-cli/commit/49efc97a813becead8865491376d7aaf902b28d5))
+* **gitlab:** honor custom API prefix when listing group repositories ([37a2cca](https://github.com/Tencent/teamai-cli/commit/37a2cca639d615c7da264fa49a9fbdb9f2d2cd33))
+* **git:** skip hooks on isolated worktree commits ([4f3fd15](https://github.com/Tencent/teamai-cli/commit/4f3fd153cb304010766026cb17c4a78a2374dac9))
+* harden team package orchestration ([40837dc](https://github.com/Tencent/teamai-cli/commit/40837dc7f39c108d2792ed69b69b5877a49ecccc))
+* **local-agent:** default max_tokens to 4096 when unset ([72e14fe](https://github.com/Tencent/teamai-cli/commit/72e14fe985d5677d2eafcf740c6cb4c080f75ae4))
+* **local-agent:** report applied models immediately ([4f27a87](https://github.com/Tencent/teamai-cli/commit/4f27a876484444c2d364e462e1fc338db3833ab6))
+* **local-agent:** report only TeamAI-delivered models ([6a90090](https://github.com/Tencent/teamai-cli/commit/6a90090e1c6278f3e1813c5940fc5f424ed1c7f9))
+* **local-agent:** run plugin install commands with bash, not dash ([bf75fd5](https://github.com/Tencent/teamai-cli/commit/bf75fd5743cc3811323cd730e47b21635c7086ab))
+* **packages:** address install review findings ([cce6e81](https://github.com/Tencent/teamai-cli/commit/cce6e81a2c077f479caa6bc888f0045e6e91ec68))
+* **packages:** keep targeted dry runs side-effect free ([e70e819](https://github.com/Tencent/teamai-cli/commit/e70e8195838fdae026f00a6b2160f4d7ebff1363))
+* preserve canonical agent metadata when merging native edits ([5680112](https://github.com/Tencent/teamai-cli/commit/56801122fef7cecf2f4e64f0f0f1756d345654e0))
+* preserve personal JoyCode rules during cleanup ([5dfd343](https://github.com/Tencent/teamai-cli/commit/5dfd343c9ca1fac82fffeee7d0d3e2f569911944))
+* **recall:** keep maintenance report reads fresh ([9da466d](https://github.com/Tencent/teamai-cli/commit/9da466dc215d0bcfdf5474cace241ca1d88fb42b))
+* **recall:** resolve project-scope config in recall commands ([f33eaf1](https://github.com/Tencent/teamai-cli/commit/f33eaf1086ebc01b8c9d4ce5e7f942de3e45356a))
+* **recall:** resolve self-mode maintenance reports ([d21cf3a](https://github.com/Tencent/teamai-cli/commit/d21cf3a45ffde2246cc82ef6fc1b7ac4a703cb6f))
+* **reporter:** scope MCP inventory to the current tool ([a9a6bfa](https://github.com/Tencent/teamai-cli/commit/a9a6bfa3a38bb81e21ce2cd6d0ed8fe2a46f3d1c)), closes [#427](https://github.com/Tencent/teamai-cli/issues/427)
+* **stats:** preserve interventions/prompts/tokens across partial reports ([4caafb7](https://github.com/Tencent/teamai-cli/commit/4caafb7555d2278f5a6c56e9a6ce6990bdbaea34))
+* **status:** count nested rule files recursively ([0620f16](https://github.com/Tencent/teamai-cli/commit/0620f1696ccfeefd3f8b24b6454c92a2fd1267b6))
+* validate Claude marketplace doctor status ([205a417](https://github.com/Tencent/teamai-cli/commit/205a417811c19591f499ecf8711f92c18f7914b7))
+* **zcode:** normalize team-hook commands and persist the enabled flip ([343a5d8](https://github.com/Tencent/teamai-cli/commit/343a5d81daacb902d5ddac45c80e41e9f6b412bb)), closes [#462](https://github.com/Tencent/teamai-cli/issues/462)
+* **zcode:** preserve the runner state when removing hooks ([cf00e98](https://github.com/Tencent/teamai-cli/commit/cf00e98a6c42b76e1aa0487c1371891100f9bb12))
+* **zcode:** route Windows hook entries through cmd.exe ([887acea](https://github.com/Tencent/teamai-cli/commit/887acea2ab772b9248992225eb5d59a1846b3b2f))
+* **zcode:** strip unknown keys from the hooks block ([9ed186c](https://github.com/Tencent/teamai-cli/commit/9ed186c0ba5b62a198ca02bed4edd94212377599))
+* **zcode:** use network-scale hook timeouts ([edab260](https://github.com/Tencent/teamai-cli/commit/edab260b9abfc50e9454b8e22b759dbf969a4964))
+
+
+### Refactoring
+
+* **cli:** rename `install` to `packages` with an `install` subcommand ([96835ac](https://github.com/Tencent/teamai-cli/commit/96835ac9a4e275fff2d4f6b3847b47d7155f157e)), closes [#380](https://github.com/Tencent/teamai-cli/issues/380)
+* **data-layout:** converge machine-data home onto getDataHome() ([#374](https://github.com/Tencent/teamai-cli/issues/374) P1-1) ([42858d4](https://github.com/Tencent/teamai-cli/commit/42858d4f0803533bd601a16bc59e1ed081276ff9))
+* **data-layout:** converge state.json onto getDataHome + add partition primitive ([#374](https://github.com/Tencent/teamai-cli/issues/374) P1-2A) ([0d34ef3](https://github.com/Tencent/teamai-cli/commit/0d34ef366a37df585b073b7d3b696922f7660f30))
 
 ## [0.23.0](https://github.com/Tencent/teamai-cli/compare/v0.22.0...v0.23.0) (2026-09-08)
 
